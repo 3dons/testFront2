@@ -24,6 +24,16 @@ export default {
     sendRequest(){
       console.log("button clicked.");
 
+      axios.get('http://localhost:8080')
+      .then(response => {
+        console.log("local ip.");
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log("local ip.");
+        console.error('Error fetching data:', error);
+      });
+
       axios.get('http://54.176.66.104')
       .then(response => {
         console.log("public ip.");
